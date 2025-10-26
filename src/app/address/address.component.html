@@ -1,0 +1,16 @@
+<div class="address-box">
+  <input
+    type="text"
+    class="input-address"
+    [value]="inputValue"
+    (input)="onInput($event)"
+    placeholder="Enter address"
+  />
+
+  {{className}}
+  <ul class="suggestions" *ngIf="addressSuggestions.length">
+    <li *ngFor="let s of addressSuggestions" (click)="onSelect(s)">
+      {{ s.description }}
+    </li>
+  </ul>
+</div>
